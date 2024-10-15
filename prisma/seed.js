@@ -28,10 +28,13 @@ const seed = async (
     // Get a random user
     const randomUser = allUsers[Math.floor(Math.random() * allUsers.length)];
     // Generate an array of 8 tracks
-    const playlistTracks = Array.from(
-      { length: numTracksInPlaylist },
-      () => allTracks[Math.floor(Math.random() * allTracks.length)]
-    );
+    let playlistTracks = [];
+    while (playlistTracks.length < 8) {
+      playlistTracks.push(
+        allTracks[Math.floor(Math.random() * allTracks.length)]
+      );
+    }
+
     await prisma.playlist.create({
       data: {
         name: faker.company.buzzAdjective() + " " + faker.company.buzzNoun(),
