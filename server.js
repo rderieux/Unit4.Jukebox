@@ -4,6 +4,11 @@ const PORT = 3000;
 
 app.use(express.json());
 
+// Route specific middleware
+app.use("/users", require("./api/users"));
+app.use("/playlists", require("./api/playlists"));
+app.use("/tracks", require("./api/tracks"));
+
 //Logging middleware
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.originalUrl}`);
