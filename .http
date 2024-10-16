@@ -22,3 +22,9 @@ Content-Type: application/json
     "ownerId": 1,
     "trackIds": [1,7,11,12]
 }
+
+### Get all tracks
+GET {{host}}/tracks
+
+### Get specific track
+GET {{host}}/tracks/2
