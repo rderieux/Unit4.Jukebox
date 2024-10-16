@@ -1,0 +1,24 @@
+@host = http://localhost:3000
+
+### Get all users
+GET {{host}}/users
+
+### Get single user and playlists
+GET {{host}}/users/1
+
+### Get all playlists
+GET {{host}}/playlists
+
+### Get playlist by id
+GET {{host}}/playlists/1
+
+### Post playlist
+POST {{host}}/playlists
+Content-Type: application/json
+
+{
+    "name": "Smooth Jazz",
+    "description": "Woopdie doo boo foo derp.",
+    "ownerId": 1,
+    "trackIds": [1,7,11,12]
+}
